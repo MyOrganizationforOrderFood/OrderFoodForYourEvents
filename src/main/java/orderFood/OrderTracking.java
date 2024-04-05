@@ -1,48 +1,48 @@
 package orderFood;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class OrderTracking{
+/**
+ * The OrderTracking class represents the tracking system for orders in a food order service.
+ * It allows tracking orders, updating order status, and displaying order details.
+ */
+public class OrderTracking {
 
-	private Map<Integer, String> orderStatusMap;
+    private Map<Integer, String> orderStatusMap;
 
+    /**
+     * Constructs a new OrderTracking object with an empty map of order statuses.
+     */
     public OrderTracking() {
         orderStatusMap = new HashMap<>();
     }
 
+    /**
+     * Tracks the order with the specified customer ID and order ID.
+     *
+     * @param customerId The ID of the customer.
+     * @param orderId    The ID of the order to track.
+     */
     public void trackOrder(int customerId, int orderId) {
-        // Step: Given the customer with id=101 (customerId)
-        // (Implementation not provided)
-
-        // Step: And the order has a unique Id 11 (orderId)
-        // (Implementation not provided)
-
-        // Step: When the customer enters the Id number =11 (orderId)
         displayOrderStatus(orderId);
-
-        // Step: Then the system displays the status of the order
-        // (Implementation not provided)
-
-        // Step: And the system displays the other order details
         displayOrderDetails(orderId);
     }
 
+    /**
+     * Updates the status of the order with the specified admin ID, order ID, and new status.
+     *
+     * @param adminId   The ID of the admin updating the order status.
+     * @param orderId   The ID of the order to update.
+     * @param newStatus The new status for the order.
+     */
     public void updateOrderStatus(int adminId, int orderId, String newStatus) {
-        // Step: Given admin login and enter the order id =12 (adminId, orderId)
-        // (Implementation not provided)
-
-        // Step: When the admin select to update order status
-        // (Implementation not provided)
-
-        // Step: And the order status is "waiting"
         String currentStatus = getOrderStatus(orderId);
-        if (currentStatus.equals("waiting")) {
 
-            // Step: And the order is updated to status "in terminate" (newStatus)
+        if (currentStatus.equals("waiting")) {
             updateStatus(orderId, newStatus);
         }
 
-        // Step: Then the order status should be "in terminate"
         String updatedStatus = getOrderStatus(orderId);
         System.out.println("Updated order status: " + updatedStatus);
     }
@@ -53,7 +53,7 @@ public class OrderTracking{
     }
 
     private void displayOrderDetails(int orderId) {
-        // Implementation for displaying order details
+        // Logic for displaying order details
     }
 
     private String getOrderStatus(int orderId) {
@@ -63,6 +63,4 @@ public class OrderTracking{
     private void updateStatus(int orderId, String newStatus) {
         orderStatusMap.put(orderId, newStatus);
     }
-
-   
 }

@@ -2,19 +2,23 @@ package orderfood;
 
 
 
-	
-	import io.cucumber.java.en.Given;
 
-	import io.cucumber.java.en.Then;
-	import io.cucumber.java.en.When;
 	import io.cucumber.java.After;
-	import io.cucumber.java.Before;
-	import io.cucumber.java.Scenario;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import orderFood.MyApplication;
 
 	public class UserRegistration {
+		MyApplication app ;
+		public UserRegistration () {
+			app = new MyApplication ();
+			
+		}
 
-		
-		
+
 	    @Before
 	    public void setUp(Scenario scenario) {
 	        // Set up any necessary setup before each scenario
@@ -46,7 +50,7 @@ package orderfood;
 	        // Write code here that turns the phrase above into concrete actions
 	        throw new io.cucumber.java.PendingException();
 	    }
-	    
+
 	    @Given("I am on the login page")
 	    public void iAmOnTheLoginPage() {
 	        // Write code here that turns the phrase above into concrete actions

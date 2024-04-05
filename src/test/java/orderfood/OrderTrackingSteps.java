@@ -1,10 +1,16 @@
 package orderfood;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import orderFood.MyApplication;
 
 public class OrderTrackingSteps {
-
+	MyApplication app ;
+	public OrderTrackingSteps () {
+		app = new MyApplication ();
+		
+	}
+	
     @Given("the customer with id={int}")
     public void customerWithId(int customerId) {
         // Code to simulate customer with given ID

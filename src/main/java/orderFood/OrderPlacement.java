@@ -1,77 +1,128 @@
 package orderFood;
 
-
-
-
+/**
+ * The OrderPlacement class represents the process of placing an order in a food order service.
+ * It allows browsing the menu, adding items to the order, providing special instructions,
+ * selecting delivery address and payment method, and completing the order.
+ */
 public class OrderPlacement {
 
-	 private String menu;
-	    private String order;
-	    private String specialInstructions;
-	    private String deliveryAddress;
-	    private String paymentMethod;
-	    private boolean orderCompleted;
+    private String menu;
+    private String order;
+    private String specialInstructions;
+    private String deliveryAddress;
+    private String paymentMethod;
+    private boolean orderCompleted;
 
-	    public void browseMenu() {
-	        // Code to browse the menu
-	        menu = "Menu items are displayed";
-	    }
+    /**
+     * Displays the menu items.
+     */
+    public void browseMenu() {
+        menu = "Menu items are displayed";
+    }
 
-	    public void addItemToOrder(String item, int quantity) {
-	        // Code to add an item to the order
-	        order = "Added " + quantity + " " + item + " to the order";
-	    }
+    /**
+     * Adds an item with the specified quantity to the order.
+     *
+     * @param item     The name of the item to be added.
+     * @param quantity The quantity of the item to be added.
+     */
+    public void addItemToOrder(String item, int quantity) {
+        order = "Added " + quantity + " " + item + " to the order";
+    }
 
-	    public void provideSpecialInstructions(String instructions) {
-	        // Code to provide special instructions for the order
-	        specialInstructions = instructions;
-	    }
+    /**
+     * Provides special instructions for the order.
+     *
+     * @param instructions The special instructions for the order.
+     */
+    public void provideSpecialInstructions(String instructions) {
+        specialInstructions = instructions;
+    }
 
-	    public void proceedToCheckout() {
-	        // Code to proceed to checkout
-	        // Perform any necessary calculations or validations
-	    }
+    /**
+     * Proceeds to the checkout process.
+     */
+    public void proceedToCheckout() {
+        // Logic for proceeding to the checkout process
+    }
 
-	    public void provideDeliveryAddress(String address) {
-	        // Code to provide the delivery address
-	        deliveryAddress = address;
-	    }
+    /**
+     * Provides the delivery address for the order.
+     *
+     * @param address The delivery address for the order.
+     */
+    public void provideDeliveryAddress(String address) {
+        deliveryAddress = address;
+    }
 
-	    public void selectPaymentMethod(String method) {
-	        // Code to select the payment method
-	        paymentMethod = method;
-	    }
+    /**
+     * Selects the payment method for the order.
+     *
+     * @param method The payment method for the order.
+     */
+    public void selectPaymentMethod(String method) {
+        paymentMethod = method;
+    }
 
-	    public void completeOrder() {
-	        // Code to complete the order
-	        // Perform any necessary actions, such as sending an order confirmation email
-	        orderCompleted = true;
-	    }
+    /**
+     * Marks the order as completed.
+     */
+    public void completeOrder() {
+        orderCompleted = true;
+    }
 
-	    // Getter methods to retrieve the order details
+    /**
+     * Retrieves the menu.
+     *
+     * @return The menu.
+     */
+    public String getMenu() {
+        return menu;
+    }
 
-	    public String getMenu() {
-	        return menu;
-	    }
+    /**
+     * Retrieves the order.
+     *
+     * @return The order.
+     */
+    public String getOrder() {
+        return order;
+    }
 
-	    public String getOrder() {
-	        return order;
-	    }
+    /**
+     * Retrieves the special instructions.
+     *
+     * @return The special instructions.
+     */
+    public String getSpecialInstructions() {
+        return specialInstructions;
+    }
 
-	    public String getSpecialInstructions() {
-	        return specialInstructions;
-	    }
+    /**
+     * Retrieves the delivery address.
+     *
+     * @return The delivery address.
+     */
+    public String getDeliveryAddress() {
+        return deliveryAddress;
+    }
 
-	    public String getDeliveryAddress() {
-	        return deliveryAddress;
-	    }
+    /**
+     * Retrieves the payment method.
+     *
+     * @return The payment method.
+     */
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
 
-	    public String getPaymentMethod() {
-	        return paymentMethod;
-	    }
-
-	    public boolean isOrderCompleted() {
-	        return orderCompleted;
-	    }
-	
+    /**
+     * Checks if the order is completed.
+     *
+     * @return true if the order is completed, false otherwise.
+     */
+    public boolean isOrderCompleted() {
+        return orderCompleted;
+    }
 }

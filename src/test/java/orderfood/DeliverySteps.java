@@ -1,10 +1,17 @@
 package orderfood;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import orderFood.MyApplication;
 
 public class DeliverySteps {
 
+	MyApplication app ;
+	public DeliverySteps () {
+		app = new MyApplication ();
+		
+	}
+	
     @Given("the user is in the checkout process")
     public void userIsInTheCheckoutProcess() {
         // Code to navigate to the checkout process

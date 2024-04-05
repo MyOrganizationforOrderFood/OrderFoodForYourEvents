@@ -1,16 +1,21 @@
 package orderfood;
 
 
-	
-	
-	
-import io.cucumber.java.en.Given;
 
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+
+
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import orderFood.MyApplication;
 	public class MenuManagement {
+		MyApplication app ;
+		public MenuManagement () {
+			app = new MyApplication ();
+			
+		}
 
 
 		 @Before
@@ -54,10 +59,10 @@ import io.cucumber.java.Before;
 		        throw new io.cucumber.java.PendingException();
 		    }
 
-		    
-		    
-		  
-		    
+
+
+
+
 		    @When("I search for the item with name {string}")
 		    public void iSearchForTheItemWithName(String string) {
 		        // Write code here that turns the phrase above into concrete actions
@@ -79,14 +84,14 @@ import io.cucumber.java.Before;
 		        // For other transformations you can register a DataTableType.
 		        throw new io.cucumber.java.PendingException();
 		    }
-		    
+
 		    @Then("the item with name {string} should be updated in the menu")
 		    public void theItemWithNameShouldBeUpdatedInTheMenu(String string) {
 		        // Write code here that turns the phrase above into concrete actions
 		        throw new io.cucumber.java.PendingException();
 		    }
-		   
-		   
+
+
 		    @Then("the item with name {string} should be removed from the menu")
 		    public void theItemWithNameShouldBeRemovedFromTheMenu(String string) {
 		        // Write code here that turns the phrase above into concrete actions

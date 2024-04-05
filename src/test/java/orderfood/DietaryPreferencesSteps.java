@@ -1,10 +1,17 @@
 package orderfood;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import orderFood.MyApplication;
 
 public class DietaryPreferencesSteps {
 
+	MyApplication app ;
+	public DietaryPreferencesSteps () {
+		app = new MyApplication ();
+		
+	}
+	
     @Given("the user is logged in and navigates to their profile settings")
     public void userNavigatesToProfileSettings() {
         // Code to simulate user login and navigate to profile settings
