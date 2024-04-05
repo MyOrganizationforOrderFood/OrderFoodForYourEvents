@@ -1,15 +1,19 @@
 package orderfood;
 
 
-	
-	
-import io.cucumber.java.en.Given;
 
+
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import orderFood.MyApplication;
 
 	public class OrderPlacement {
-
+		MyApplication app ;
+		public OrderPlacement () {
+			app = new MyApplication ();
+			
+		}
 		@Given("I am a logged-in user")
 		public void iAmALoggedInUser() {
 		    // Write code here that turns the phrase above into concrete actions
@@ -27,7 +31,7 @@ import io.cucumber.java.en.When;
 		}
 		@When("I add the following items to my order:")
 		public void iAddTheFollowingItemsToMyOrder(io.cucumber.datatable.DataTable dataTable) {
-		    
+
 		    throw new io.cucumber.java.PendingException();
 		}
 		@When("I provide special instructions for the order:")

@@ -1,10 +1,15 @@
 package orderfood;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import orderFood.MyApplication;
 
 public class PaymentSteps {
-
+	MyApplication app ;
+	public PaymentSteps () {
+		app = new MyApplication ();
+		
+	}
     @Given("the customer selects products and proceeds to checkout")
     public void customerSelectsProductsAndProceedsToCheckout() {
         // Code to simulate customer selecting products and proceeding to checkout

@@ -1,12 +1,21 @@
 package orderfood;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
+import orderFood.MyApplication;
+
+
 
 	public class Admin {
+		
+		MyApplication app ;
+		public Admin () {
+			app = new MyApplication ();
+			
+		}
 		 @Before
 		    public void setup() {
 		        // Code to setup any necessary resources or test data
@@ -57,8 +66,8 @@ import io.cucumber.java.Before;
 		        // Write code here that turns the phrase above into concrete actions
 		        throw new io.cucumber.java.PendingException();
 		    }
-		    
-		    
+
+
 		    @Given("I am logged in to the admin dashboard")
 		    public void iAmLoggedInToTheAdminDashboard11() {
 		        // Write code here that turns the phrase above into concrete actions
@@ -99,8 +108,8 @@ import io.cucumber.java.Before;
 		        // Write code here that turns the phrase above into concrete actions
 		        throw new io.cucumber.java.PendingException();
 		    }
-	
-	
+
+
 	@Given("I am logged in to the admin dashboard")
 	public void iAmLoggedInToTheAdminDashboard() {
 	    // Write code here that turns the phrase above into concrete actions

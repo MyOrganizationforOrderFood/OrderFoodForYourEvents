@@ -3,11 +3,16 @@ package orderfood;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import orderFood.MyApplication;
 
 public class InventoryManagement {
-	
-	
-	
+
+	MyApplication app ;
+	public InventoryManagement () {
+		app = new MyApplication ();
+		
+	}
+
 	  @Given("a restaurant or catering service with integrated inventory management")
 	    public void restaurantOrCateringServiceWithIntegratedInventoryManagement() {
 	        // Code to simulate a restaurant or catering service with integrated inventory management
@@ -31,6 +36,6 @@ public class InventoryManagement {
 	        // Code to ensure accurate inventory reflects changes in real-time
 	        throw new io.cucumber.java.PendingException();
 	    }
-	
+
 
 }

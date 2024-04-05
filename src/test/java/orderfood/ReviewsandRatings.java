@@ -1,10 +1,15 @@
 package orderfood;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import orderFood.MyApplication;
 public class ReviewsandRatings {
-	
-	
+
+	MyApplication app ;
+	public ReviewsandRatings () {
+		app = new MyApplication ();
+		
+	}
 
 
 	    @Given("a user has experienced the food and services")
@@ -32,5 +37,5 @@ public class ReviewsandRatings {
 	    }
 	}
 
-	
+
 

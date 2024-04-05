@@ -2,86 +2,82 @@ package orderFood;
 
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * The PaymentSystem class represents the payment processing system in a food order service.
+ * It allows processing payments, updating order status, and generating payment confirmation receipts.
+ */
 public class PaymentSystem {
-	 private List<String> supportedPaymentMethods;
 
-	    public PaymentSystem() {
-	        supportedPaymentMethods = new ArrayList<>();
-	        supportedPaymentMethods.add("Credit Card");
-	        supportedPaymentMethods.add("PayPal");
-	        supportedPaymentMethods.add("Apple Pay");
-	    }
+    private List<String> supportedPaymentMethods;
 
-	    public void processPayment(String selectedPaymentMethod) {
-	        // Step: Given the customer selects products and proceeds to checkout
-	        // (Implementation not provided)
+    /**
+     * Constructs a new PaymentSystem object with a list of supported payment methods.
+     */
+    public PaymentSystem() {
+        supportedPaymentMethods = new ArrayList<>();
+        supportedPaymentMethods.add("Credit Card");
+        supportedPaymentMethods.add("PayPal");
+        supportedPaymentMethods.add("Apple Pay");
+    }
 
-	        // Step: And the customer chooses to pay via a supported payment method
-	        if (isPaymentMethodSupported(selectedPaymentMethod)) {
+    /**
+     * Processes the payment using the selected payment method.
+     *
+     * @param selectedPaymentMethod The selected payment method.
+     */
+    public void processPayment(String selectedPaymentMethod) {
+        if (isPaymentMethodSupported(selectedPaymentMethod)) {
 
-	            // Step: When the customer completes the payment process
-	            boolean paymentSuccessful = completePaymentProcess();
+            boolean paymentSuccessful = completePaymentProcess();
 
-	            if (paymentSuccessful) {
-	                // Step: Then the payment gateway processes the payment
-	                processPaymentGateway();
+            if (paymentSuccessful) {
+                processPaymentGateway();
+                updateOrderStatus("Paid");
+                generatePaymentConfirmationReceipt();
+            } else {
+                paymentFailedResponse();
+                displayPaymentFailedMessage();
+                suggestAlternativePaymentMethod();
+            }
+        } else {
+            displayUnsupportedPaymentMethodMessage();
+        }
+    }
 
-	                // Step: And the system updates the order status to "Paid"
-	                updateOrderStatus("Paid");
+    private boolean isPaymentMethodSupported(String paymentMethod) {
+        return supportedPaymentMethods.contains(paymentMethod);
+    }
 
-	                // Step: And the system generates a payment confirmation receipt for the customer
-	                generatePaymentConfirmationReceipt();
-	            } else {
-	                // Step: When the payment process fails due to a declined transaction
-	                // Step: Then the payment gateway sends a failure response
-	                paymentFailedResponse();
+    private boolean completePaymentProcess() {
+        return true;
+    }
 
-	                // Step: And the system displays a payment failed message to the customer
-	                displayPaymentFailedMessage();
+    private void processPaymentGateway() {
+        // Logic for processing the payment gateway
+    }
 
-	                // Step: And suggests the customer to try another payment method or check their payment details
-	                suggestAlternativePaymentMethod();
-	            }
-	        } else {
-	            // Step: And the customer chooses an unsupported payment method
-	            displayUnsupportedPaymentMethodMessage();
-	        }
-	    }
+    private void updateOrderStatus(String newStatus) {
+        // Logic for updating the order status
+    }
 
-	    private boolean isPaymentMethodSupported(String paymentMethod) {
-	        return supportedPaymentMethods.contains(paymentMethod);
-	    }
+    private void generatePaymentConfirmationReceipt() {
+        // Logic for generating the payment confirmation receipt
+    }
 
-	    private boolean completePaymentProcess() {
-	        // Implementation for completing the payment process
-	        return true; // Assuming the payment process is successful
-	    }
+    private void paymentFailedResponse() {
+        // Logic for handling the payment failure response
+    }
 
-	    private void processPaymentGateway() {
-	        // Implementation for processing the payment via the payment gateway
-	    }
+    private void displayPaymentFailedMessage() {
+        // Logic for displaying a payment failed message
+    }
 
-	    private void updateOrderStatus(String newStatus) {
-	        // Implementation for updating the order status
-	    }
+    private void suggestAlternativePaymentMethod() {
+        // Logic for suggesting an alternative payment method
+    }
 
-	    private void generatePaymentConfirmationReceipt() {
-	        // Implementation for generating the payment confirmation receipt
-	    }
-
-	    private void paymentFailedResponse() {
-	        // Implementation for handling the payment failure response from the payment gateway
-	    }
-
-	    private void displayPaymentFailedMessage() {
-	        // Implementation for displaying the payment failed message to the customer
-	    }
-
-	    private void suggestAlternativePaymentMethod() {
-	        // Implementation for suggesting an alternative payment method to the customer
-	    }
-
-	    private void displayUnsupportedPaymentMethodMessage() {
-	        // Implementation for displaying an unsupported payment method message to the customer
-	    }
+    private void displayUnsupportedPaymentMethodMessage() {
+        // Logic for displaying an unsupported payment method message
+    }
 }

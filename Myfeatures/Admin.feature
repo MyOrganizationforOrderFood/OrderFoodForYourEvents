@@ -29,3 +29,4 @@ Feature: Admin
     And there is a food order for the event "Annual Gala"
     When I click on the "Delete" button for the "Annual Gala" order
     Then the food order for the event "Annual Gala" should be deleted successfully
+    And the "Annual Gala" order should no longer be visible in the food orders list
