@@ -57,7 +57,7 @@ public class PaymentSystem {
         // Logic for processing the payment gateway
     }
 
-    private void updateOrderStatus(String newStatus) {
+    private void updateOrderStatus() {
         // Logic for updating the order status
     }
 
