@@ -27,9 +27,10 @@ public class Admin {
      * @param quantities The list of quantities corresponding to each food item.
      */
     public void addFoodOrder(String eventName, List<String> foodItems, List<Integer> quantities) {
-        foodOrders.put(eventName, foodItems);
-        System.out.println("Food order for the event \"" + eventName + "\" added successfully.");
-    }
+    foodOrders.put(eventName, foodItems);
+    final String message = "Food order for the event \"" + eventName + "\" added successfully.";
+    System.out.println(message);
+}
 
     /**
      * Updates a food order for a specific event.
