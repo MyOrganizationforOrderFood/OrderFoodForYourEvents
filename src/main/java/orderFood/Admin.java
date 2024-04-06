@@ -26,9 +26,10 @@ public class Admin {
      * @param foodItems  The list of food items for the order.
      * @param quantities The list of quantities corresponding to each food item.
      */
-    public void addFoodOrder(String eventName, List<String> foodItems, List<Integer> quantities) {
+   public void addFoodOrder(String eventName, List<String> foodItems, List<Integer> quantities) {
     foodOrders.put(eventName, foodItems);
-    final String message = "Food order for the event \"" + eventName + "\" added successfully.";
+    final String MESSAGE_TEMPLATE = "Food order for the event \"%s\" added successfully.";
+    final String message = String.format(MESSAGE_TEMPLATE, eventName);
     System.out.println(message);
 }
 
