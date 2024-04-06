@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class DietaryPreferences {
 
-    private List<String> dietaryPreferences;
+    private List<String> preferredDietaryChoices;
     private List<String> foodAllergies;
 
     /**
