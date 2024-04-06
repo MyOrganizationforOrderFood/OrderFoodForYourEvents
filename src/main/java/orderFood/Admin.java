@@ -1,4 +1,4 @@
-package orderFood;
+package org.exAmple;
 
 import java.util.HashMap;
 import java.util.List;
