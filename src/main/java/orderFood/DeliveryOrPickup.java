@@ -29,6 +29,11 @@ public class DeliveryOrPickup {
         logger.info(estimatedDeliveryTime);
     }
    }
+
+    private boolean shouldLogDeliveryTime() {
+    // Add your conditional logic here
+    return true; // Example condition, modify as per your needs
+}
     /**
      * Selects the pickup option for the food order and sets the pickup location and time.
      *
