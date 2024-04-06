@@ -1,4 +1,6 @@
 package orderFood;
+import java.util.logging.Logger;
+
 
 /**
  * The DeliveryOrPickup class represents the delivery or pickup options for a food order.
@@ -15,11 +17,15 @@ public class DeliveryOrPickup {
      *
      * @param address The delivery address.
      */
-    public void selectDeliveryOption(String address) {
-        setDeliveryAddress(address);
-        System.out.println("Delivery address confirmed: " + address);
-        System.out.println("Estimated delivery time: 2 hours");
-    }
+   public void selectDeliveryOption(String address) {
+    setDeliveryAddress(address);
+    Logger logger = Logger.getLogger(getClass().getName());
+    final String ADDRESS_CONFIRMATION_MESSAGE = "Delivery address confirmed: %s";
+    final String estimatedDeliveryTime = "Estimated delivery time: 2 hours";
+    
+    logger.info(String.format(ADDRESS_CONFIRMATION_MESSAGE, address));
+    logger.info(estimatedDeliveryTime);
+}
 
     /**
      * Selects the pickup option for the food order and sets the pickup location and time.
