@@ -28,9 +28,10 @@ public class Admin {
      */
    public void addFoodOrder(String eventName, List<String> foodItems, List<Integer> quantities) {
     foodOrders.put(eventName, foodItems);
+    Logger logger = Logger.getLogger(getClass().getName());
     final String MESSAGE_TEMPLATE = "Food order for the event \"%s\" added successfully.";
     final String message = String.format(MESSAGE_TEMPLATE, eventName);
-    System.out.println(message);
+    logger.info(message);
 }
 
     /**
