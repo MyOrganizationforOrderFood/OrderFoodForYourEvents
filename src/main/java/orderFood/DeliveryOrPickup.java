@@ -18,21 +18,21 @@ public class DeliveryOrPickup {
      * @param address The delivery address.
      */
    public void selectDeliveryOption(String address) {
-   setDeliveryAddress(address);
-    Logger logger = Logger.getLogger(getClass().getName());
-    final String ADDRESS_CONFIRMATION_MESSAGE = "Delivery address confirmed: %s";
-    final String estimatedDeliveryTime = "Estimated delivery time: 2 hours";
-    
-    logger.info(String.format(ADDRESS_CONFIRMATION_MESSAGE, address));
-    
-    if (shouldLogDeliveryTime()) {
-        logger.info(estimatedDeliveryTime);
+        setDeliveryAddress(address);
+        Logger logger = Logger.getLogger(getClass().getName());
+        final String ADDRESS_CONFIRMATION_MESSAGE = "Delivery address confirmed: %s";
+        final String estimatedDeliveryTime = "Estimated delivery time: 2 hours";
+
+        logger.info(String.format(ADDRESS_CONFIRMATION_MESSAGE, address));
+
+        if (shouldLogDeliveryTime()) {
+            logger.info(estimatedDeliveryTime);
+        }
     }
-   }
 
     private boolean shouldLogDeliveryTime() {
-    // Add your conditional logic here
-    return true; // Example condition, modify as per your needs
+    
+    return true; 
 }
     /**
      * Selects the pickup option for the food order and sets the pickup location and time.
@@ -40,7 +40,7 @@ public class DeliveryOrPickup {
      * @param location The pickup location.
      * @param time     The preferred pickup time.
      */
-    public void selectPickupOption(String location, String time) {
+     public void selectPickupOption(String location, String time) {
         setPickupLocation(location);
         setPickupTime(time);
         System.out.println("Pickup location confirmed: " + location);
