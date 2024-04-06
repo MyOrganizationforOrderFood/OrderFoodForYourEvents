@@ -2,6 +2,7 @@ package orderFood;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 /**
  * The OrderTracking class represents the tracking system for orders in a food order service.
@@ -10,7 +11,7 @@ import java.util.Map;
 public class OrderTracking {
 
     private Map<Integer, String> orderStatusMap;
-
+private static final Logger logger = Logger.getLogger(YourClassName.class.getName());
     /**
      * Constructs a new OrderTracking object with an empty map of order statuses.
      */
@@ -36,16 +37,15 @@ public class OrderTracking {
      * @param orderId   The ID of the order to update.
      * @param newStatus The new status for the order.
      */
-    public void updateOrderStatus(int adminId, int orderId, String newStatus) {
-        String currentStatus = getOrderStatus(orderId);
-
-        if (currentStatus.equals("waiting")) {
-            updateStatus(orderId, newStatus);
-        }
-
-        String updatedStatus = getOrderStatus(orderId);
-        System.out.println("Updated order status: " + updatedStatus);
+   public void updateOrderStatus(int adminId, int orderId, String newStatus) {
+    String currentStatus = getOrderStatus(orderId);
+    if (currentStatus.equals("waiting")) {
+        updateStatus(orderId, newStatus);
     }
+
+    String updatedStatus = getOrderStatus(orderId);
+    logger.info("Updated order status: " + updatedStatus);
+}
 
     private void displayOrderStatus(int orderId) {
         String status = getOrderStatus(orderId);
