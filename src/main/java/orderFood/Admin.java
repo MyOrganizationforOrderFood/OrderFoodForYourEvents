@@ -43,18 +43,23 @@ public class Admin {
      * @param foodItems  The updated list of food items for the order.
      * @param quantities The updated list of quantities corresponding to each food item.
      */
-    public void updateFoodOrder(String eventName, List<String> foodItems, List<Integer> quantities) {
-        foodOrders.put(eventName, foodItems);
-        System.out.println("Food order for the event \"" + eventName + "\" updated successfully.");
-    }
-
+   public void updateFoodOrder(String eventName, List<String> foodItems, List<Integer> quantities) {
+    foodOrders.put(eventName, foodItems);
+    Logger logger = Logger.getLogger(getClass().getName());
+    final String MESSAGE_TEMPLATE = "Food order for the event \"%s\" updated successfully.";
+    final String message = String.format(MESSAGE_TEMPLATE, eventName);
+    logger.info(message);
+}
     /**
      * Deletes a food order for a specific event.
      *
      * @param eventName The name of the event.
      */
-    public void deleteFoodOrder(String eventName) {
-        foodOrders.remove(eventName);
-        System.out.println("Food order for the event \"" + eventName + "\" deleted successfully.");
-    }
+   public void deleteFoodOrder(String eventName) {
+    foodOrders.remove(eventName);
+    Logger logger = Logger.getLogger(getClass().getName());
+    final String MESSAGE_TEMPLATE = "Food order for the event \"%s\" deleted successfully.";
+    final String message = String.format(MESSAGE_TEMPLATE, eventName);
+    logger.info(message);
+}
 }
