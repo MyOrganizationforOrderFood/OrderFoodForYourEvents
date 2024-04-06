@@ -18,17 +18,13 @@ public class DeliveryOrPickup {
      * @param address The delivery address.
      */
    public void selectDeliveryOption(String address) {
-        setDeliveryAddress(address);
-        Logger logger = Logger.getLogger(getClass().getName());
-        final String ADDRESS_CONFIRMATION_MESSAGE = "Delivery address confirmed: %s";
-        final String estimatedDeliveryTime = "Estimated delivery time: 2 hours";
-
-        logger.info(String.format(ADDRESS_CONFIRMATION_MESSAGE, address));
-
-        if (shouldLogDeliveryTime()) {
-            logger.info(estimatedDeliveryTime);
-        }
-    }
+    setDeliveryAddress(address);
+    Logger logger = Logger.getLogger(getClass().getName());
+    final String ADDRESS_CONFIRMATION_MESSAGE = "Delivery address confirmed: %s";
+    final String estimatedDeliveryTime = "Estimated delivery time: 2 hours";
+    logger.info(String.format(ADDRESS_CONFIRMATION_MESSAGE, address));
+    logger.info(estimatedDeliveryTime);
+}
 
     private boolean shouldLogDeliveryTime() {
     
