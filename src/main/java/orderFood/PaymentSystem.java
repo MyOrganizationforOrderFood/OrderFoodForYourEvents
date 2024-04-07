@@ -26,16 +26,14 @@ public class PaymentSystem {
      *
      * @param selectedPaymentMethod The selected payment method.
      */
-    public void processPayment(String selectedPaymentMethod) {
-        if (isPaymentMethodSupported(selectedPaymentMethod)) {
-
-            boolean paymentSuccessful = completePaymentProcess();
-
-            if (paymentSuccessful) {
-                processPaymentGateway();
-                updateOrderStatus("Paid");
-                generatePaymentConfirmationReceipt();
-            } else {
+   public void processPayment(String selectedPaymentMethod) {
+    if (isPaymentMethodSupported(selectedPaymentMethod)) {
+        boolean paymentSuccessful = completePaymentProcess();
+        if (paymentSuccessful) {
+            processPaymentGateway();
+            updateOrderStatus("Paid");
+            generatePaymentConfirmationReceipt();
+        } else {
                 paymentFailedResponse();
                 displayPaymentFailedMessage();
                 suggestAlternativePaymentMethod();
