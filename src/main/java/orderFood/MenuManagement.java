@@ -62,27 +62,25 @@ public class MenuManagement {
      */
     public boolean itemExists(String name) {
         return menuItems.containsKey(name);
-    }
+    }  
 
-   private static class MenuItem {
-    public MenuItem(String name) {
-        this.setName(name);
-    }
-}
+private static class MenuItem {
+        private String description;
+        private double price;
 
-        private void setName(String name) {
-            // TODO Auto-generated method stub
-
+        public MenuItem(String description, double price) {
+            this.description = description;
+            this.price = price;
         }
 
         public void setPrice(double newPrice) {
-            // TODO Auto-generated method stub
-
+            this.price = newPrice;
         }
 
         public void setDescription(String newDescription) {
-            // TODO Auto-generated method stub
-
+            this.description = newDescription;
         }
     }
+
+    
 }
