@@ -35,10 +35,10 @@ public class MenuManagement {
 
 
     private static class MenuItem {
-        public MenuItem(String name, String description, double price) {
-            this.setName(name);
-        }
-
+    public MenuItem(String name) {
+        this.setName(name);
+    }
+}
 		private void setName(String name) {
 			// TODO Auto-generated method stub
 
